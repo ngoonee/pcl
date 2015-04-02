@@ -251,7 +251,7 @@ namespace pcl
             if (pixel_depth)
             {
               // Inverse depth decoding
-              float depth = focalLength_arg / pixel_depth;
+              float depth = pixel_depth;
 
               // Generate new points
               newPoint.x = static_cast<float> (x) * depth * fl_const;
@@ -551,9 +551,9 @@ namespace pcl
 
             const float& pixel_depth = depthData_arg[i];
 
-            if (pixel_depth==pixel_depth)
+            if (pixel_depth)
             {
-              float depth = focalLength_arg / pixel_depth;
+              float depth = pixel_depth;
 
               // Define point location
               newPoint.z = depth;
